@@ -37,7 +37,8 @@ cacheSolve <- function(x, ...) {
                 return(invx)
             }
             matx <- x$get()
-            invx <- solve(matx, b, ...) # b is the augmented part to the systemwhose coefficient matrix is matx
+            invx <- solve(matx, b, ...) # b is the Identity matrix augmented with matx 
+			                            # so that solve will return inverse of matx
             x$setinvx(invx)
             invx
 
